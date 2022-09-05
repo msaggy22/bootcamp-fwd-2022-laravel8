@@ -35,4 +35,9 @@ class Doctor extends Model
     {
         return $this->belongsTo('App\Models\MasterData\Specialist', 'specialist_id', 'id');
     }
+
+    public function appointment()
+    {
+        return $this->hasMany('App\Models\Operationl\Appointment', 'doctor_id');
+    }
 }
