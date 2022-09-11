@@ -22,12 +22,6 @@ use App\Models\MasterData\Specialist;
 
 class LandingController extends Controller
 {
-
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
     /**
      * Display a listing of the resource.
      *
@@ -35,7 +29,7 @@ class LandingController extends Controller
      */
     public function index()
     {
-        return view('pages.fronsite.landing-page.index');
+        return view('pages.frontsite.landing-page.index');
     }
 
     /**
