@@ -131,9 +131,9 @@
   
             <!-- Card -->
             <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12 lg:gap-10 mt-10">
-              <a href="src/pages/subject-consultation.html" class="group">
+              <a href="{{ route('appointment.index') }}" class="group">
                 <div class="relative z-10 w-full h-[350px] rounded-2xl overflow-hidden">
-                  <img src="/src/assets/images/doctor-1.png" class="w-full h-full bg-center bg-no-repeat object-cover object-center" alt="Doctor 1">
+                  <img src="{{ asset('assets/frontsite/images/doctor-1.png') }}" class="w-full h-full bg-center bg-no-repeat object-cover object-center" alt="Doctor 1">
                   <div class="opacity-0 group-hover:opacity-100 transition-all ease-in absolute inset-0 bg-[#0D63F3] bg-opacity-70 flex justify-center items-center">
                     <span class="text-[#0D63F3] font-medium bg-white rounded-full px-8 py-3">Book Now</span>
                   </div>
@@ -144,15 +144,15 @@
                     <div class="text-[#AFAEC3] mt-1">Cardiologist</div>
                   </div>
                   <div class="flex items-center space-x-2">
-                    <img src="/src/assets/images/star.svg" alt="Star">
+                    <img src="{{ asset('assets/frontsite/images/star.svg') }}" alt="Star">
                     <span class="block text-[#1E2B4F] font-medium">4.5</span>
                   </div>
                 </div>
               </a>
   
-              <a href="src/pages/subject-consultation.html" class="group">
+              <a href="{{ route('appointment.index') }}" class="group">
                 <div class="relative z-10 w-full h-[350px] rounded-2xl overflow-hidden">
-                  <img src="/src/assets/images/doctor-2.png" class="w-full h-full bg-center bg-no-repeat object-cover object-center" alt="Doctor 1">
+                  <img src="{{ asset('assets/frontsite/images/doctor-2.png') }}" class="w-full h-full bg-center bg-no-repeat object-cover object-center" alt="Doctor 1">
                   <div class="opacity-0 group-hover:opacity-100 transition-all ease-in absolute inset-0 bg-[#0D63F3] bg-opacity-70 flex justify-center items-center">
                     <span class="text-[#0D63F3] font-medium bg-white rounded-full px-8 py-3">Book Now</span>
                   </div>
@@ -163,15 +163,15 @@
                     <div class="text-[#AFAEC3] mt-1">Dentist</div>
                   </div>
                   <div class="flex items-center space-x-2">
-                    <img src="/src/assets/images/star.svg" alt="Star">
+                    <img src="{{ asset('assets/frontsite/images/star.svg') }}" alt="Star">
                     <span class="block text-[#1E2B4F] font-medium">4.8</span>
                   </div>
                 </div>
               </a>
   
-              <a href="src/pages/subject-consultation.html" class="group">
+              <a href="{{ route('appointment.index') }}" class="group">
                 <div class="relative z-10 w-full h-[350px] rounded-2xl overflow-hidden">
-                  <img src="/src/assets/images/doctor-3.png" class="w-full h-full bg-center bg-no-repeat object-cover object-center" alt="Doctor 1">
+                  <img src="{{ asset('assets/frontsite/images/doctor-3.png') }}" class="w-full h-full bg-center bg-no-repeat object-cover object-center" alt="Doctor 1">
                   <div class="opacity-0 group-hover:opacity-100 transition-all ease-in absolute inset-0 bg-[#0D63F3] bg-opacity-70 flex justify-center items-center">
                     <span class="text-[#0D63F3] font-medium bg-white rounded-full px-8 py-3">Book Now</span>
                   </div>
@@ -182,15 +182,15 @@
                     <div class="text-[#AFAEC3] mt-1">Neurologist</div>
                   </div>
                   <div class="flex items-center space-x-2">
-                    <img src="/src/assets/images/star.svg" alt="Star">
+                    <img src="{{ asset('assets/frontsite/images/star.svg') }}" alt="Star">
                     <span class="block text-[#1E2B4F] font-medium">4.5</span>
                   </div>
                 </div>
               </a>
   
-              <a href="src/pages/subject-consultation.html" class="group">
+              <a href="{{ route('appointment.index') }}" class="group">
                 <div class="relative z-10 w-full h-[350px] rounded-2xl overflow-hidden">
-                  <img src="/src/assets/images/doctor-4.png" class="w-full h-full bg-center bg-no-repeat object-cover object-center" alt="Doctor 1">
+                  <img src="{{ asset('assets/frontsite/images/doctor-4.png') }}" class="w-full h-full bg-center bg-no-repeat object-cover object-center" alt="Doctor 1">
                   <div class="opacity-0 group-hover:opacity-100 transition-all ease-in absolute inset-0 bg-[#0D63F3] bg-opacity-70 flex justify-center items-center">
                     <span class="text-[#0D63F3] font-medium bg-white rounded-full px-8 py-3">Book Now</span>
                   </div>
@@ -201,7 +201,7 @@
                     <div class="text-[#AFAEC3] mt-1">Dermatology</div>
                   </div>
                   <div class="flex items-center space-x-2">
-                    <img src="/src/assets/images/star.svg" alt="Star">
+                    <img src="{{ asset('assets/frontsite/images/star.svg') }}" alt="Star">
                     <span class="block text-[#1E2B4F] font-medium">4.5</span>
                   </div>
                 </div>
