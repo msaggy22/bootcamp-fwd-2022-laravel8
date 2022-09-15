@@ -29,6 +29,7 @@
 
             <!-- Form input -->
             <form method="POST" action="{{ route('login') }}" class="grid gap-6">
+
                 @csrf
 
               <label class="block">
@@ -42,8 +43,8 @@
               <label class="block">
                 <input type="password" id="password" name="password" for="password" class="block w-full rounded-full py-4 text-[#1E2B4F] font-medium placeholder:text-[#AFAEC3] placeholder:font-normal px-7 border border-[#d4d4d4] focus:outline-none focus:border-[#0D63F3]" placeholder="Password" />
 
-                @if ($errors->has('email'))
-                    <p class="text-red-500 mb-3 text-sm">{{ $errors->first('email') }}</p>
+                @if ($errors->has('password'))
+                    <p class="text-red-500 mb-3 text-sm">{{ $errors->first('password') }}</p>
                 @endif
               </label>
               
