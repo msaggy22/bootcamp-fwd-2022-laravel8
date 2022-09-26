@@ -9,20 +9,20 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Symfony\Component\HttpFoundation\Response;
 
-use App\Http\Requests\Specialist\StoreSpecialistRequest;
-use App\Http\Requests\Specialist\UpdateSpecialistRequest;
+use App\Http\Requests\ConfigPayment\UpdateConfigPaymentRequest;
 
 // use everything here
 // use Gate;
 use Auth;
 
 // use model here
-use App\Models\MasterData\Specialist;
+use App\Models\MasterData\ConfigPayment;
 
 // third party
 
-class SpecialistController extends Controller
+class ConfigPaymentController extends Controller
 {
+
     /**
      * Create a new controller instance.
      *
@@ -40,9 +40,9 @@ class SpecialistController extends Controller
      */
     public function index()
     {
-        $specialist = Specialist::orderBy('created_at', 'desc')->get();
+        $config_payment = ConfigPayment::all();
 
-        return view('pages.backsite.master-data.specialist.index', compact('specialist'));
+        return view('pages.backsite.master-data.config-payment.index', compact('config-payment'));
     }
 
     /**
@@ -61,16 +61,9 @@ class SpecialistController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreSpecialistRequest $request)
-    {   
-        //get all request from fronsite
-        $data = $request->all();
-
-        //store to database
-        $specialist = Specialist::create($data);
-        
-        alert()->succes('Succes Message', 'Successfully added new Specialist');
-        return redirect()->route('backsite.specialist.index');
+    public function store(Request $request)
+    {
+        return abort(404);
     }
 
     /**
@@ -79,9 +72,9 @@ class SpecialistController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Specialist $specialist)
+    public function show($id)
     {
-        return view('pages.backsite.master-data.specialist.show', compact('specialist'));
+        return abort(404);
     }
 
     /**
@@ -90,9 +83,9 @@ class SpecialistController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Specialist $specialist)
+    public function edit($id)
     {
-        return view('pages.backsite.master-data.specialist.edit', compact('specialist'));
+        return view('pages.backsite.master-data.config-payment.edit', compact('config-payment'));
     }
 
     /**
@@ -102,16 +95,21 @@ class SpecialistController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateSpecialistRequest $request, Specialist $specialist)
+    public function update(UpdateConfigPaymentRequest $request, ConfigPayment $config_payment)
     {
-        //get all request from fronsite
+        // get all request from frontsite
         $data = $request->all();
 
-        //store to database
-        $specialist->update($data);
-        
-        alert()->succes('Succes Message', 'Successfully updated Specialist');
-        return redirect()->route('backsite.specialist.index');
+        // // re format before push to table
+        // $data['fee'] = str_replace(',', '', $data['fee']);
+        // $data['fee'] = str_replace('IDR ', '', $data['fee']);
+        // $data['vat'] = str_replace(',', '', $data['vat']);
+
+        // update to database
+        $config_payment->update($data);
+
+        alert()->success('Success Message', 'Successfully updated config payment');
+        return redirect()->route('backsite.config_payment.index');
     }
 
     /**
@@ -120,11 +118,8 @@ class SpecialistController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Specialist $specialist)
+    public function destroy($id)
     {
-        $specialist->forceDelete();
-        
-        alert()->succes('Succes Message', 'Successfully deleted Specialist');
-        return back();
+        return abort(404);
     }
 }

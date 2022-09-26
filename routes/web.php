@@ -9,6 +9,12 @@ use App\Http\Controllers\Frontsite\PaymentController;
 use App\Http\Controllers\Backsite\DashboardController;
 use App\Http\Controllers\Backsite\TypeUserController;
 use App\Http\Controllers\Backsite\SpecialistController;
+use App\Http\Controllers\Backsite\ConfigPaymentController;
+use App\Http\Controllers\Backsite\ConsultationController;
+use App\Http\Controllers\Backsite\DoctorController;
+use App\Http\Controllers\Backsite\PermissionController;
+use App\Http\Controllers\Backsite\RoleController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -40,8 +46,23 @@ Route::group(['prefix' => 'backsite', 'as' => 'backsite', 'middleware' => ['auth
     //TypeUser
     Route::resource('type_user', TypeUserController::class);
 
-    //TypeUser
+    //Specialist
     Route::resource('specialist', SpecialistController::class);
+
+    // ConfigPayment
+    Route::resource('config_payment', ConfigPaymentController::class);
+
+    // Consultation
+    Route::resource('consultation', ConsultationController::class);
+
+    // Doctor
+    Route::resource('doctor', DoctorController::class);
+
+    // Permission
+    Route::resource('permission', PermissionController::class);
+
+    // Role
+    Route::resource('role', RoleController::class);
 
 });
 
