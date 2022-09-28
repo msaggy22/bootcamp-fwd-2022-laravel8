@@ -70,6 +70,13 @@ class User extends Authenticatable
         'profile_photo_url',
     ];
 
+    // many to many --- //
+    public function role()
+    {
+        return $this->belongsToMany('App\Models\ManagementAccess\Role');
+    }
+
+    // One to Many
     public function appointment()
     {
         return $this->hasMany('App\Models\Operational\Appointment', 'user_id');
