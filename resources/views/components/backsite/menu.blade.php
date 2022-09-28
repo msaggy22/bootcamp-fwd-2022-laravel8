@@ -50,29 +50,29 @@
                 <li class=" nav-item"><a href="#"><i class="{{ request()->is('backsite/specialist') || request()->is('backsite/specialist/*') || request()->is('backsite/*/specialist') || request()->is('backsite/*/specialist/*') || request()->is('backsite/consultation') || request()->is('backsite/consultation/*') || request()->is('backsite/*/consultation') || request()->is('backsite/*/consultation/*') || request()->is('backsite/config_payment') || request()->is('backsite/config_payment/*') || request()->is('backsite/*/config_payment') || request()->is('backsite/*/config_payment/*') ? 'bx bx-customize bx-flashing' : 'bx bx-customize' }}"></i><span class="menu-title" data-i18n="Master Data">Master Data</span></a>
                     <ul class="menu-content">
 
-                        {{-- @can('specialist_access') --}}
+                        @can('specialist_access')
                             <li class="{{ request()->is('backsite/specialist') || request()->is('backsite/specialist/*') || request()->is('backsite/*/specialist') || request()->is('backsite/*/specialist/*') ? 'active' : '' }} ">
                                 <a class="menu-item" href="{{ url('backsite.specialist.index') }}">
                                     <i></i><span>Specialist</span>
                                 </a>
                             </li>
-                        {{-- @endcan --}}
+                        @endcan
 
-                        {{-- @can('consultation_access') --}}
+                        @can('consultation_access')
                             <li class="{{ request()->is('backsite/consultation') || request()->is('backsite/consultation/*') || request()->is('backsite/*/consultation') || request()->is('backsite/*/consultation/*') ? 'active' : '' }} ">
                                 <a class="menu-item" href="{{ url('backsite.consultation.index') }}">
                                     <i></i><span>Consultation</span>
                                 </a>
                             </li>
-                        {{-- @endcan --}}
+                        @endcan
 
-                        {{-- @can('config_payment_access') --}}
+                        @can('config_payment_access')
                             <li class="{{ request()->is('backsite/config_payment') || request()->is('backsite/config_payment/*') || request()->is('backsite/*/config_payment') || request()->is('backsite/*/config_payment/*') ? 'active' : '' }} ">
                                 <a class="menu-item" href="{{ url('backsite.config_payment.index') }}">
                                     <i></i><span>Config Payment</span>
                                 </a>
                             </li>
-                        {{-- @endcan --}}
+                        @endcan
 
                     </ul>
                 </li>
@@ -90,13 +90,13 @@
                             </li>
                         @endcan
 
-                        {{-- @can('hospital_patient_access') --}}
+                        @can('hospital_patient_access')
                             <li class="{{ request()->is('backsite/hospital_patient') || request()->is('backsite/hospital_patient/*') || request()->is('backsite/*/hospital_patient') || request()->is('backsite/*/hospital_patient/*') ? 'active' : '' }} ">
                                 <a class="menu-item" href="{{ url('backsite.hospital_patient.index') }}">
                                     <i></i><span>Hospital Patient</span>
                                 </a>
                             </li>
-                        {{-- @endcan --}}
+                        @endcan
 
 
                         {{-- here you can add nurse --}}

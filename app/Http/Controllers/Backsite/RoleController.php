@@ -13,7 +13,7 @@ use App\Http\Requests\Role\StoreRoleRequest;
 use App\Http\Requests\Role\UpdateRoleRequest;
 
 // use everything here
-// use Gate;
+use Illuminate\Support\Facades\Gate;
 use Auth;
 
 // use model here
@@ -44,6 +44,8 @@ class RoleController extends Controller
      */
     public function index()
     {
+        abort_if(Gate::denies('role_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+
         $role = Role::orderBy('created_at', 'desc')->get();
 
         return view('pages.backsite.management-access.role.index', compact('role'));
@@ -85,7 +87,8 @@ class RoleController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(Role $role)
-    {
+    {   
+        abort_if(Gate::denies('role_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
         // need more notes here
         $role->load('permission');
         return view('pages.backsite.management-access.role.show', compact('role'));
@@ -99,6 +102,7 @@ class RoleController extends Controller
      */
     public function edit(Role $role)
     {
+        abort_if(Gate::denies('role_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
         // need more notes here
         $permission = Permission::all();
         $role->load('permission');
@@ -131,6 +135,7 @@ class RoleController extends Controller
      */
     public function destroy(Role $role)
     {
+        abort_if(Gate::denies('role_delete'), Response::HTTP_FORBIDDEN, '403 Forbidden');
         //need more notes here
         $role->forceDelete();
 

@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\DB;
 use Symfony\Component\HttpFoundation\Response;
 
 // use everything here
-use Gate;
+use Illuminate\Support\Facades\Gate;
 use Auth;
 
 // use model here
@@ -43,6 +43,8 @@ class HospitalPatientController extends Controller
      */
     public function index()
     {
+        abort_if(Gate::denies('hospital_patient_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+
         $hospital_patient = User::whereHas('detail_user', function ($query) {
             return $query->where('type_user_id', 3);
         })->orderBy('created_at', 'desc')->get();
